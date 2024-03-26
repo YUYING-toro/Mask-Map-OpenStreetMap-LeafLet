@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <!--  判斷取得資料數量 給markar 不同顏色，扣在js -->
+    <!--  base on data to give different colour of marker -->
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
 <link href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.4.1/MarkerCluster.css"></link> 
 <link href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.4.1/MarkerCluster.Default.css"></link> 
@@ -93,13 +93,13 @@ var redIcon = new L.Icon({
 var markers = new L.MarkerClusterGroup().addTo(map);;
 
 var xhr = new XMLHttpRequest();
-xhr.open("get","https://mocki.io/v1/50dff23c-2211-4520-b321-5884e6e4e36b");
+xhr.open("get","https://mocki.io/v1/b6e11196-84e0-4703-b57b-653c989ef3f6");
 xhr.send();
 xhr.onload = function(){
  var data = JSON.parse(xhr.responseText).features
  for(let i =0;data.length>i;i++){
    
-//    判斷 給顏色
+//    Give Color
   var mask;
  if(data[i].properties.mask_adult == 0){
    mask = redIcon;
