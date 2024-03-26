@@ -93,7 +93,7 @@ var redIcon = new L.Icon({
 var markers = new L.MarkerClusterGroup().addTo(map);;
 
 var xhr = new XMLHttpRequest();
-xhr.open("get","https://run.mocky.io/v3/09abd75b-e256-40f8-a35d-3ae5e6484ede");
+xhr.open("get","https://mocki.io/v1/50dff23c-2211-4520-b321-5884e6e4e36b");
 xhr.send();
 xhr.onload = function(){
  var data = JSON.parse(xhr.responseText).features
